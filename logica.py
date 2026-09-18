@@ -274,9 +274,9 @@ def obtener_pasos_comparacion(laberinto_base, fila_inicio, columna_inicio):
         # Comprobar si llegamos a una de las dos salidas
         es_salida = (copia[fila_actual][columna_actual] == "S" or (fila_actual, columna_actual) == salida_1 or (fila_actual, columna_actual) == salida_2)
         if es_salida and (fila_actual, columna_actual) not in salidas_encontradas:
-            salidas_encontradas.append((fila_actual, columna_actual))
+            salidas_encontradas.append((fila_actual, columna_actual)) # la guarda para no volver a contarla
             historial_de_pasos.append(("meta", fila_actual, columna_actual))
-            if len(salidas_encontradas) == 2:
+            if len(salidas_encontradas) == 2:  # Si ya encontro las 2, corta
                 return True
 
         simbolo_previo = copia[fila_actual][columna_actual]

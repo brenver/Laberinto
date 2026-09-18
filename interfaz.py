@@ -216,7 +216,7 @@ def iniciar():
 
     # Creamos una superficie virtual con el tamaño original (800x880).
     superficie = pygame.Surface((ancho_pantalla, alto_pantalla))
-    reloj = pygame.time.Clock()
+    reloj = pygame.time.Clock() #crea el objeto que controla la velocidad del loop
 
     # Fuentes de texto
     fuente_texto = pygame.font.SysFont("Courier New", 13, bold=True)
@@ -265,13 +265,13 @@ def iniciar():
                 if evento.key == pygame.K_ESCAPE:
                     ejecutando = False
                 elif evento.key == pygame.K_UP or evento.key == pygame.K_w:
-                    mover_jugador(-1, 0)
+                    mover_jugador(-1, 0)                                          # fila -1: mover arriba
                 elif evento.key == pygame.K_DOWN or evento.key == pygame.K_s:
-                    mover_jugador(1, 0)
+                    mover_jugador(1, 0)                                           # fila +1: mover abajo
                 elif evento.key == pygame.K_LEFT or evento.key == pygame.K_a:
-                    mover_jugador(0, -1)
+                    mover_jugador(0, -1)                                          # columna -1: mover izquierda
                 elif evento.key == pygame.K_RIGHT or evento.key == pygame.K_d:
-                    mover_jugador(0, 1)
+                    mover_jugador(0, 1)                                           # columna +1: mover derecha
                 elif evento.key == pygame.K_r:
                     resolver_automatico()
                 elif evento.key == pygame.K_c:
